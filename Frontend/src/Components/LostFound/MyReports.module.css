@@ -1,0 +1,410 @@
+/* My Reports Page Styles */
+.myReportsPage {
+  min-height: 100vh;
+  background-color: var(--light-grey);
+  position: relative;
+  overflow: hidden;
+}
+
+.myReportsPage::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 10% 10%, rgba(139, 195, 74, 0.15), transparent 40%),
+              radial-gradient(circle at 90% 90%, rgba(139, 195, 74, 0.1), transparent 40%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.heroSection {
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #333;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.heroContent {
+  max-width: 800px;
+  padding: 0 2rem;
+}
+
+.heroContent h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+  color: #000 !important;
+}
+
+.heroContent p {
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  min-height: calc(100vh - 540px);
+  position: relative;
+  z-index: 1;
+}
+
+/* Reports Grid */
+.reportsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.reportCard {
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.reportCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.reportCard.lost {
+  border-left: 5px solid #6c757d;
+}
+
+.reportCard.found {
+  border-left: 5px solid #4ecdc4;
+}
+
+.reportCard.resolved {
+  opacity: 0.8;
+  border-left-color: #95a5a6;
+}
+
+.reportImage {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+}
+
+.reportImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.statusBadge {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  color: white;
+  font-weight: 600;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.statusBadge.lost {
+  background: #6c757d;
+}
+
+.statusBadge.found {
+  background: #4ecdc4;
+}
+
+.resolvedBadge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  background: #95a5a6;
+  color: white;
+  font-weight: 600;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.reportInfo {
+  padding: 1.5rem;
+}
+
+.reportInfo h3 {
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+  color: #2c3e50;
+  font-weight: 600;
+}
+
+.petDetails {
+  color: #7f8c8d;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.description {
+  color: #34495e;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+.locationInfo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #7f8c8d;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+.reportMeta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+}
+
+.reportDate {
+  color: #7f8c8d;
+}
+
+.statusIndicator {
+  padding: 0.25rem 0.75rem;
+  border-radius: 15px;
+  font-weight: 600;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+}
+
+.statusIndicator.active {
+  background: #e8f5e8;
+  color: #27ae60;
+}
+
+.statusIndicator.resolved {
+  background: #f0f0f0;
+  color: #95a5a6;
+}
+
+.statusIndicator.inactive {
+  background: #fdf2e9;
+  color: #e67e22;
+}
+
+.reportActions {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.editBtn,
+.deleteBtn,
+.resolveBtn,
+.saveBtn,
+.cancelBtn {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.editBtn {
+  background: #3498db;
+  color: white;
+}
+
+.editBtn:hover {
+  background: #2980b9;
+  transform: translateY(-2px);
+}
+
+.editBtn:disabled {
+  background: #bdc3c7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.deleteBtn {
+  background: #e74c3c;
+  color: white;
+}
+
+.deleteBtn:hover {
+  background: #c0392b;
+  transform: translateY(-2px);
+}
+
+.resolveBtn {
+  background: #27ae60;
+  color: white;
+}
+
+.resolveBtn:hover {
+  background: #229954;
+  transform: translateY(-2px);
+}
+
+.saveBtn {
+  background: #27ae60;
+  color: white;
+}
+
+.saveBtn:hover {
+  background: #229954;
+  transform: translateY(-2px);
+}
+
+.cancelBtn {
+  background: #95a5a6;
+  color: white;
+}
+
+.cancelBtn:hover {
+  background: #7f8c8d;
+  transform: translateY(-2px);
+}
+
+/* Edit Form */
+.editForm {
+  padding: 1.5rem;
+}
+
+.formGroup {
+  margin-bottom: 1rem;
+}
+
+.formGroup label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #2c3e50;
+  font-size: 0.9rem;
+}
+
+.formGroup input,
+.formGroup select,
+.formGroup textarea {
+  width: 100%;
+  padding: 0.5rem;
+  border: 2px solid #e1e5e9;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  font-family: inherit;
+}
+
+.formGroup input:focus,
+.formGroup select:focus,
+.formGroup textarea:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.formRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.editActions {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+}
+
+/* Loading and Empty States */
+.loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
+  color: white;
+  min-height: 50vh;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  border-top: 4px solid white;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1rem;
+}
+
+.emptyState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
+  color: white;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+}
+
+.emptyState h3 {
+  margin: 1rem 0 0.5rem 0;
+  font-size: 1.5rem;
+}
+
+.emptyState p {
+  opacity: 0.8;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+  
+  .header h1 {
+    font-size: 2rem;
+  }
+  
+  .reportsGrid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .formRow {
+    grid-template-columns: 1fr;
+  }
+  
+  .reportActions {
+    flex-direction: column;
+  }
+  
+  .editActions {
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,267 @@
+.authContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #000000 0%, #333333 100%);
+  position: relative;
+  overflow: hidden;
+  padding: 20px;
+}
+
+.authContainer::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(174, 213, 129, 0.1) 0%, transparent 50%);
+  animation: rotate 20s linear infinite;
+  z-index: 1;
+}
+
+.authContainer::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(174, 213, 129, 0.05) 0%, transparent 40%);
+  animation: rotate 30s linear infinite reverse;
+  z-index: 1;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.authForm {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 2.5rem;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 450px;
+  position: relative;
+  z-index: 10;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transform: translateY(0);
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+.authForm:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.authTitle {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #1a1a1a;
+  font-size: 2rem;
+  font-weight: 700;
+  position: relative;
+  padding-bottom: 0.75rem;
+}
+
+.authTitle::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background: hsl(86, 45%, 54%);
+  border-radius: 2px;
+  animation: expandWidth 1s ease-out forwards;
+}
+
+@keyframes expandWidth {
+  from { width: 0; }
+  to { width: 60px; }
+}
+
+.inputGroup {
+  margin-bottom: 1.8rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #333333;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transform: translateY(0);
+  transition: all 0.3s ease;
+}
+
+.input {
+  width: 100%;
+  padding: 0.9rem 1rem;
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background-color: rgba(255, 255, 255, 0.9);
+  box-sizing: border-box;
+}
+
+.input:focus {
+  outline: none;
+  border-color: hsl(86, 45%, 54%);
+  box-shadow: 0 0 0 3px rgba(174, 213, 129, 0.2);
+  transform: translateY(-2px);
+}
+
+.input:hover {
+  border-color: #cccccc;
+}
+
+.error {
+  color: #e53e3e;
+  font-size: 0.875rem;
+  margin-top: 0.5rem;
+  padding-left: 0.5rem;
+  position: relative;
+  animation: slideIn 0.3s ease-out forwards;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.submitButton {
+  width: 100%;
+  padding: 1rem;
+  background: hsl(86, 45%, 54%);
+  color: #1a1a1a;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  margin-top: 1rem;
+  box-shadow: 0 4px 12px rgba(174, 213, 129, 0.3);
+}
+
+.submitButton:hover {
+  background: hsl(86, 50%, 48%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(174, 213, 129, 0.4);
+}
+
+.submitButton:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 8px rgba(174, 213, 129, 0.3);
+}
+
+.submitButton::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 5px;
+  height: 5px;
+  background: rgba(255, 255, 255, 0.5);
+  opacity: 0;
+  border-radius: 100%;
+  transform: scale(1, 1) translate(-50%);
+  transform-origin: 50% 50%;
+}
+
+.submitButton:focus:not(:active)::after {
+  animation: ripple 1s ease-out;
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0, 0);
+    opacity: 0.5;
+  }
+  20% {
+    transform: scale(25, 25);
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(40, 40);
+  }
+}
+
+.toggleText {
+  text-align: center;
+  margin-top: 1.5rem;
+  color: #4a5568;
+  font-size: 0.95rem;
+}
+
+.toggleLink {
+  color: hsl(86, 45%, 40%);
+  text-decoration: none;
+  font-weight: 600;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.toggleLink::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background-color: hsl(86, 45%, 40%);
+  transform-origin: bottom right;
+  transition: transform 0.3s ease-out;
+}
+
+.toggleLink:hover {
+  color: hsl(86, 45%, 35%);
+}
+
+.toggleLink:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.decorativeElement {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  opacity: 0.7;
+  z-index: 1;
+}

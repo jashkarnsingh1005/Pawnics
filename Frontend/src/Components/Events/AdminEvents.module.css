@@ -1,0 +1,24 @@
+.page { min-height: 100vh; display: flex; flex-direction: column; }
+.container { max-width: 1100px; margin: 2rem auto; padding: 0 1rem 2rem; }
+h1 { margin: 0 0 1rem; color: #333; }
+.error { background: #ffebee; color: #c62828; border: 1px solid #ffcdd2; padding: 0.7rem 1rem; border-radius: 6px; margin-bottom: 0.75rem; }
+.form { background: #fff; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); padding: 1rem; display: flex; flex-direction: column; gap: 0.75rem; }
+.row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem; }
+.row input { padding: 0.7rem 0.9rem; border: 1px solid #e0e0e0; border-radius: 6px; background: #fafafa; }
+.form textarea { padding: 0.7rem 0.9rem; border: 1px solid #e0e0e0; border-radius: 6px; background: #fafafa; min-height: 80px; }
+.row input:focus, .form textarea:focus { outline: none; border-color: #8bc34a; box-shadow: 0 0 0 3px rgba(139,195,74,0.15); background: #fff; }
+.actions { display: flex; justify-content: flex-end; gap: 0.75rem; }
+.actions button { background: #8bc34a; color: #fff; border: none; border-radius: 6px; padding: 0.6rem 1rem; font-weight: 600; cursor: pointer; }
+.actions button:hover { background: #7cb342; }
+.table { margin-top: 1.25rem; background: #fff; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); overflow: hidden; }
+.thead, .trow { display: grid; grid-template-columns: 2fr 1fr 1fr 2fr 1fr 1.5fr; padding: 0.75rem 1rem; }
+.thead { background: #f9f9f9; color: #555; font-weight: 600; }
+.trow { border-top: 1px solid #eee; align-items: center; }
+.rowActions { display: flex; gap: 0.5rem; justify-content: flex-end; }
+.rowActions button { background: #f5f5f5; color: #555; border: none; border-radius: 6px; padding: 0.45rem 0.8rem; cursor: pointer; }
+.rowActions button:hover { background: #e0e0e0; }
+.deleteBtn { background: #ffebee !important; color: #c62828 !important; }
+.deleteBtn:hover { background: #ef9a9a !important; color: #b71c1c !important; }
+.sectionTitle { margin-top: 2rem; color: #333; }
+@media (max-width: 900px) { .row { grid-template-columns: 1fr; } .thead, .trow { grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr 1fr; } }
+

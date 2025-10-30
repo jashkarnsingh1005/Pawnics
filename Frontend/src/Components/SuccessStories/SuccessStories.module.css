@@ -1,0 +1,533 @@
+.storiesSection {
+  background-color: #f5f5f5;
+  padding: 6rem 2rem;
+  color: var(--dark-color);
+  position: relative;
+  overflow: hidden;
+}
+
+.storiesSection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at top right, rgba(var(--primary-color-rgb), 0.1), transparent 60%);
+  z-index: 0;
+}
+
+.storiesSection::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at bottom left, rgba(var(--primary-color-rgb), 0.05), transparent 60%);
+  z-index: 0;
+}
+
+.storiesContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 4rem;
+  position: relative;
+}
+
+.sectionHeader h2 {
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+  color: var(--dark-color);
+  position: relative;
+  display: inline-block;
+}
+
+.headerAccent {
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary-color), var(--primary-light));
+  margin: 0 auto 1.5rem;
+  border-radius: 2px;
+}
+
+.sectionHeader p {
+  font-size: 1.2rem;
+  color: var(--grey-color);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.storiesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 2.5rem;
+}
+
+.storyCard {
+  position: relative;
+  background-color: var(--light-color);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-normal);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.storyImage {
+  height: 220px;
+  overflow: hidden;
+  position: relative;
+}
+
+.storyImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s ease;
+}
+
+.imageOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, transparent 50%, rgba(0, 0, 0, 0.7));
+  z-index: 1;
+}
+
+.storyCard:hover .storyImage img {
+  transform: scale(1.1);
+}
+
+.cardBadge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 40px;
+  height: 40px;
+  background-color: var(--primary-color);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--dark-color);
+  font-size: 1.2rem;
+  z-index: 2;
+  box-shadow: var(--shadow-md);
+}
+
+.storyContent {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  position: relative;
+}
+
+.quoteIcon {
+  position: absolute;
+  top: -15px;
+  left: 20px;
+  color: var(--primary-color);
+  font-size: 1.5rem;
+  opacity: 0.3;
+}
+
+.storyContent h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--dark-color);
+  position: relative;
+}
+
+.storyContent p {
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+  color: var(--grey-color);
+  flex: 1;
+}
+
+.cardFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+}
+
+.storyDate {
+  font-size: 0.9rem;
+  color: var(--grey-color);
+  font-style: italic;
+}
+
+.readMoreBtn {
+  background-color: transparent;
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+}
+
+.readMoreBtn:hover {
+  background-color: var(--primary-color);
+  color: var(--dark-color);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Responsive styles */
+@media (max-width: 1024px) {
+  .storiesGrid {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .storiesGrid {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+  }
+  
+  .sectionHeader h2 {
+    font-size: 2.2rem;
+  }
+  
+  .storyImage {
+    height: 180px;
+  }
+  
+  .storyContent {
+    padding: 1.5rem;
+  }
+  
+  .storyContent h3 {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .storiesGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .storyImage {
+    height: 200px;
+  }
+}.storiesSection {
+  background-color: #f5f5f5;
+  padding: 6rem 2rem;
+  color: var(--dark-color);
+  position: relative;
+  overflow: hidden;
+}
+
+.storiesSection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at top right, rgba(var(--primary-color-rgb), 0.1), transparent 60%);
+  z-index: 0;
+}
+
+.storiesSection::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at bottom left, rgba(var(--primary-color-rgb), 0.05), transparent 60%);
+  z-index: 0;
+}
+
+.storiesContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 4rem;
+  position: relative;
+}
+
+.sectionHeader h2 {
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+  color: var(--dark-color);
+  position: relative;
+  display: inline-block;
+}
+
+.headerAccent {
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary-color), var(--primary-light));
+  margin: 0 auto 1.5rem;
+  border-radius: 2px;
+}
+
+.sectionHeader p {
+  font-size: 1.2rem;
+  color: var(--grey-color);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.storiesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 2.5rem;
+}
+
+.storyCard {
+  position: relative;
+  background-color: var(--light-color);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-normal);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.storyImage {
+  height: 220px;
+  overflow: hidden;
+  position: relative;
+}
+
+.storyImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s ease;
+}
+
+.imageOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, transparent 50%, rgba(0, 0, 0, 0.7));
+  z-index: 1;
+}
+
+.storyCard:hover .storyImage img {
+  transform: scale(1.1);
+}
+
+.cardBadge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 40px;
+  height: 40px;
+  background-color: var(--primary-color);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--dark-color);
+  font-size: 1.2rem;
+  z-index: 2;
+  box-shadow: var(--shadow-md);
+}
+
+.storyContent {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  position: relative;
+}
+
+.quoteIcon {
+  position: absolute;
+  top: -15px;
+  left: 20px;
+  color: var(--primary-color);
+  font-size: 1.5rem;
+  opacity: 0.3;
+}
+
+.storyContent h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--dark-color);
+  position: relative;
+}
+
+.storyContent p {
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+  color: var(--grey-color);
+  flex: 1;
+}
+
+.cardFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+}
+
+.storyDate {
+  font-size: 0.9rem;
+  color: var(--grey-color);
+  font-style: italic;
+}
+
+.readMoreBtn {
+  background-color: transparent;
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+}
+
+.readMoreBtn:hover {
+  background-color: var(--primary-color);
+  color: var(--dark-color);
+  box-shadow: var(--shadow-sm);
+}
+
+/* ---------- Modal Styles ---------- */
+.modalOverlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.7);
+  display: flex; 
+  align-items: center; 
+  justify-content: center;
+  z-index: 1000;
+  padding: 1rem;
+}
+
+.modalContent {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  max-width: 600px;
+  width: 100%;
+  position: relative;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  overflow-y: auto;
+  max-height: 90vh;
+}
+
+.modalContent img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.modalContent h2 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  color: var(--dark-color);
+}
+
+.modalContent p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--grey-color);
+  margin-bottom: 1rem;
+}
+.closeBtn {
+  position: fixed;       /* fixed to viewport, not relative to parent */
+  top: 10px;             /* distance from top */
+  left: 10px;            /* distance from left */
+  background: #ffffff;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #000000;           /* dark color */
+  z-index: 9999;         /* ensure it stays on top of popup */
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.closeBtn:hover {
+  transform: scale(1.2);
+  color: var(--primary-color); /* change on hover */
+}
+
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1024px) {
+  .storiesGrid {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .storiesGrid {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+  }
+  
+  .sectionHeader h2 {
+    font-size: 2.2rem;
+  }
+  
+  .storyImage {
+    height: 180px;
+  }
+  
+  .storyContent {
+    padding: 1.5rem;
+  }
+  
+  .storyContent h3 {
+    font-size: 1.3rem;
+  }
+
+  .modalContent {
+    max-width: 90%;
+    padding: 15px;
+  }
+
+  .modalContent h2 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .storiesGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .storyImage {
+    height: 200px;
+  }
+
+  .modalContent {
+    max-height: 85vh;
+  }
+}
